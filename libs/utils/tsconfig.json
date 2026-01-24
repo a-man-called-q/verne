@@ -1,8 +1,9 @@
 {
-  "extends": "@verne/tsconfigs/react",
-  "compilerOptions": {
-    "outDir": "dist",
-    "rootDir": "src"
-  },
-  "include": ["src/**/*"]
+	"extends": "@verne/tsconfigs/react",
+	"compilerOptions": {
+		"outDir": "dist",
+		"rootDir": "src",
+		"types": ["node"]
+	},
+	"include": ["src/**/*"]
 }

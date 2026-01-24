@@ -15,8 +15,12 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"devDependencies": {
+		"@types/node": "catalog:service",
 		"typescript": "catalog:package",
 		"unbuild": "catalog:package",
 		"vite": "catalog:web"
+	},
+	"dependencies": {
+		"effect": "catalog:service"
 	}
 }

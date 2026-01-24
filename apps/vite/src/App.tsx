@@ -7,12 +7,11 @@ function App() {
 	const [count, setCount] = useState(0);
 
 	return (
-		<div className="min-h-screen bg-[url('/background.jpg')] bg-cover bg-center bg-no-repeat bg-fixed relative overflow-hidden font-serif">
-			{/* Full screen blur overlay */}
+		<div className="min-h-screen bg-[url('/background.jpg')] bg-cover bg-center bg-no-repeat bg-fixed relative overflow-hidden font-sans">
 			<div className="absolute inset-0 backdrop-blur-sm bg-black/10" />
 
 			<div className="relative z-10 min-h-screen flex flex-col items-center justify-center p-4 text-white">
-				<div className="max-w-md w-full text-center space-y-8 p-10 rounded-3xl bg-neutral-800/50 shadow-2xl border border-white/10">
+				<div className="max-w-md w-full text-center space-y-8 p-10 rounded-3xl bg-neutral-800/30 shadow-2xl border border-white/40">
 					<div className="flex justify-center gap-6 items-center opacity-80 hover:opacity-100 transition-opacity">
 						<a
 							href="https://vite.dev"
@@ -54,9 +53,6 @@ function App() {
 							<h1 className="text-6xl font-bold tracking-tight text-white drop-shadow-lg">
 								Verne
 							</h1>
-							<p className="text-neutral-200 font-semibold tracking-wide drop-shadow-sm text-lg">
-								Vite + React Monorepo Starter
-							</p>
 						</div>
 					</div>
 

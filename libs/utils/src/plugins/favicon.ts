@@ -1,6 +1,8 @@
 import fs from "node:fs";
+import type { IncomingMessage, ServerResponse } from "node:http";
 import { createRequire } from "node:module";
-import type { Plugin } from "vite";
+import { Effect, Either } from "effect";
+import type { Connect, Plugin, ViteDevServer } from "vite";
 
 export interface FaviconOptions {
 	/**
@@ -21,44 +23,82 @@ export interface FaviconOptions {
 }
 
 export function prerenderFavicon(options: FaviconOptions): Plugin {
-	let { icon, name = "favicon.svg" } = options;
+	const { icon: iconInput, name = "favicon.svg" } = options;
 
-	// Resolve icon if it appears to be a path or module ID (doesn't start with SVG tag)
-	if (icon && !icon.trim().startsWith("<")) {
-		try {
-			const require = createRequire(import.meta.url);
-			const resolvedPath = require.resolve(icon);
-			icon = fs.readFileSync(resolvedPath, "utf-8");
-		} catch (error) {
-			console.warn(
-				`[vite-plugin-prerender-favicon] Failed to resolve icon path: ${icon}. Assuming it is content or invalid. Error:`,
-				error,
-			);
+	const getIconContent = Effect.gen(function* () {
+		if (!iconInput) {
+			return yield* Effect.fail(new Error("Icon path is required"));
 		}
+
+		if (iconInput.trim().startsWith("<")) {
+			return iconInput;
+		}
+
+		const require = createRequire(import.meta.url);
+
+		const resolvedPath = yield* Effect.try({
+			try: () => require.resolve(iconInput),
+			catch: (error) =>
+				new Error(
+					`Failed to resolve icon path: ${iconInput}. Error: ${String(error)}`,
+				),
+		});
+
+		const content = yield* Effect.try({
+			try: () => fs.readFileSync(resolvedPath, "utf-8"),
+			catch: (error) =>
+				new Error(
+					`Failed to read file: ${resolvedPath}. Error: ${String(error)}`,
+				),
+		});
+
+		return content;
+	});
+
+	// Run synchronously as Vite config loading is generally synchronous for plugins setup
+	const result = Effect.runSync(Effect.either(getIconContent));
+
+	let iconContent: string | undefined;
+
+	if (Either.isRight(result)) {
+		iconContent = result.right;
+	} else {
+		// Log warning but don't crash build
+		console.warn(`[vite-plugin-prerender-favicon] ${result.left.message}`);
 	}
 
 	return {
 		name: "vite-plugin-prerender-favicon",
-		// apply: "build", // Kita hapus apply: build biar jalan di dev juga
 		generateBundle() {
-			this.emitFile({
-				type: "asset",
-				fileName: name,
-				source: icon,
-			});
+			if (iconContent) {
+				this.emitFile({
+					type: "asset",
+					fileName: name,
+					source: iconContent,
+				});
+			}
 		},
-		configureServer(server) {
-			// Handle request ke /favicon.svg saat dev mode
-			server.middlewares.use((req, res, next) => {
-				if (req.url === `/${name}`) {
-					res.setHeader("Content-Type", "image/svg+xml");
-					res.end(icon);
-					return;
-				}
-				next();
-			});
+		configureServer(server: ViteDevServer) {
+			if (!iconContent) return;
+
+			server.middlewares.use(
+				(
+					req: IncomingMessage,
+					res: ServerResponse,
+					next: Connect.NextFunction,
+				) => {
+					if (req.url === `/${name}`) {
+						res.setHeader("Content-Type", "image/svg+xml");
+						res.end(iconContent);
+						return;
+					}
+					next();
+				},
+			);
 		},
 		transformIndexHtml(html: string) {
+			if (!iconContent) return html;
+
 			return {
 				html,
 				tags: [
@@ -69,7 +109,7 @@ export function prerenderFavicon(options: FaviconOptions): Plugin {
 							type: "image/svg+xml",
 							href: `/${name}`,
 						},
-						injectTo: "head",
+						injectTo: "head" as const,
 					},
 				],
 			};
