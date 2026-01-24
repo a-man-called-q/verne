@@ -8,6 +8,7 @@ onlyBuiltDependencies:
   - lefthook
   - turbo
   - esbuild
+  - core-js-pure
 
 catalogs:
   web:
@@ -15,8 +16,8 @@ catalogs:
   react:
     '@types/react': '^19.2.5'
     '@types/react-dom': '^19.2.3'
-    react: '^19.2.0'
-    react-dom: '^19.2.0'
+    react: '^19.2.3'
+    react-dom: '^19.2.3'
   service:
     effect: '^3.19.15'
     '@types/node': '^24.10.1'

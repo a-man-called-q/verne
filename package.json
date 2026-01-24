@@ -14,12 +14,14 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.3.12",
+		"@commitlint/cli": "^20.3.1",
+		"@commitlint/config-conventional": "^20.3.1",
 		"@turbo/gen": "^2.7.5",
-		"lefthook": "^2.0.15",
-		"turbo": "^2.7.5",
+		"@verne/assets": "workspace:*",
 		"@verne/tsconfigs": "workspace:*",
 		"@verne/ui": "workspace:*",
-		"@verne/assets": "workspace:*",
-		"@verne/utils": "workspace:*"
+		"@verne/utils": "workspace:*",
+		"lefthook": "^2.0.15",
+		"turbo": "^2.7.5"
 	}
 }
