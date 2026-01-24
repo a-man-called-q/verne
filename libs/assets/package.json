@@ -2,11 +2,23 @@
 	"name": "@verne/assets",
 	"version": "0.0.0",
 	"private": true,
+	"types": "./index.d.ts",
 	"files": [
-		"logo.svg"
+		"logo.svg",
+		"index.d.ts"
 	],
 	"exports": {
-		"./logo": "./logo.svg"
+		".": {
+			"types": "./index.d.ts"
+		},
+		"./logo.svg": {
+			"types": "./index.d.ts",
+			"default": "./logo.svg"
+		},
+		"./*": {
+			"types": "./index.d.ts",
+			"default": "./*"
+		}
 	},
 	"scripts": {
 		"lint": "biome check ."

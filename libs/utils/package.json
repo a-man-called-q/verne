@@ -1,22 +1,22 @@
 {
-  "name": "@verne/utils",
-  "version": "0.0.0",
-  "private": true,
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "build": "unbuild",
-    "dev": "unbuild --stub",
-    "lint": "biome check .",
-    "typecheck": "tsc --noEmit"
-  },
-  "devDependencies": {
-    "typescript": "catalog:package",
-    "unbuild": "catalog:package",
-    "vite": "^7.3.1"
-  }
+	"name": "@verne/utils",
+	"version": "0.0.0",
+	"private": true,
+	"main": "./dist/index.mjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "unbuild",
+		"dev": "unbuild --stub",
+		"lint": "biome check .",
+		"typecheck": "tsc --noEmit"
+	},
+	"devDependencies": {
+		"typescript": "catalog:package",
+		"unbuild": "catalog:package",
+		"vite": "catalog:web"
+	}
 }

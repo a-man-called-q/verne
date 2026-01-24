@@ -7,6 +7,9 @@
 	"packageManager": "pnpm@10.28.1",
 	"scripts": {
 		"gen": "turbo gen",
+		"build": "turbo build",
+		"lint": "turbo lint",
+		"dev": "turbo dev --filter='./apps/*'",
 		"storybook": "turbo storybook dev -p 6006 --filter=storybook"
 	},
 	"devDependencies": {

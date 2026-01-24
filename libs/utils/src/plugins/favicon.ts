@@ -1,9 +1,11 @@
+import fs from "node:fs";
+import { createRequire } from "node:module";
 import type { Plugin } from "vite";
 
 export interface FaviconOptions {
 	/**
-	 * The source of the favicon. Can be a file path or direct content.
-	 * Currently supports SVG string content or path.
+	 * The source of the favicon. Can be a file path, module ID, or direct content.
+	 * Currently supports SVG string content or path/module ID resolving to an SVG file.
 	 */
 	icon: string;
 	/**
@@ -19,7 +21,21 @@ export interface FaviconOptions {
 }
 
 export function prerenderFavicon(options: FaviconOptions): Plugin {
-	const { icon, name = "favicon.svg" } = options;
+	let { icon, name = "favicon.svg" } = options;
+
+	// Resolve icon if it appears to be a path or module ID (doesn't start with SVG tag)
+	if (icon && !icon.trim().startsWith("<")) {
+		try {
+			const require = createRequire(import.meta.url);
+			const resolvedPath = require.resolve(icon);
+			icon = fs.readFileSync(resolvedPath, "utf-8");
+		} catch (error) {
+			console.warn(
+				`[vite-plugin-prerender-favicon] Failed to resolve icon path: ${icon}. Assuming it is content or invalid. Error:`,
+				error,
+			);
+		}
+	}
 
 	return {
 		name: "vite-plugin-prerender-favicon",

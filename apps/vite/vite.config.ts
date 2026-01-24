@@ -1,4 +1,4 @@
-import logo from "@verne/assets/logo.svg";
+import tailwindcss from "@tailwindcss/vite";
 import { prerenderFavicon } from "@verne/utils";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
@@ -6,9 +6,9 @@ import { defineConfig } from "vite";
 // https://vite.dev/config/
 export default defineConfig({
 	plugins: [
+		tailwindcss(),
 		prerenderFavicon({
-			icon: logo, // Masukkan string SVG di sini
-			name: "favicon.svg", // Opsional, default favicon.svg
+			icon: "@verne/assets/logo.svg",
 		}),
 		react({
 			babel: {
