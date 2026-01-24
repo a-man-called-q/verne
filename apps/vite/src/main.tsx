@@ -1,6 +1,5 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "@verne/assets/fonts.css";
 import "./assets/global.css";
 import App from "./app";
 
