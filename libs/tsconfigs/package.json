@@ -1,0 +1,24 @@
+{
+	"name": "@verne/tsconfigs",
+	"version": "0.0.1",
+	"private": true,
+	"files": [
+		"base.json",
+		"react-vite.json",
+		"node.json",
+		"astro.json"
+	],
+	"exports": {
+		"./base": "./base.json",
+		"./react-vite": "./react-vite.json",
+		"./node": "./node.json",
+		"./astro": "./astro.json"
+	},
+	"scripts": {
+		"lint": "biome check .",
+		"typecheck": "tsc --noEmit"
+	},
+	"devDependencies": {
+		"typescript": "catalog:package"
+	}
+}

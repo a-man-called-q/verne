@@ -1,0 +1,18 @@
+packages:
+  - 'libs/*'
+  - 'apps/*'
+  - 'dev-apps/*'
+  - 'scripts/*'
+
+onlyBuiltDependencies:
+  - lefthook
+  - turbo
+  - core-js-pure
+
+catalogs:
+#   expo:
+#   web:
+#   fonts:
+  package:
+    typescript: '^5.7.3'
+    

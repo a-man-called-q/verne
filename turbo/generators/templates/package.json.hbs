@@ -1,0 +1,26 @@
+{
+  "name": "{{pkgName}}",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    {{#if isBuildable}}
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    {{/if}}
+    "lint": "biome check .",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@verne/tsconfigs": "workspace:*",
+    {{#if isBuildable}}
+    "unbuild": "latest",
+    {{/if}}
+    "typescript": "catalog:package"
+  }
+}
