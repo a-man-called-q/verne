@@ -1,0 +1,22 @@
+{
+  "name": "@verne/ui",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "lint": "biome check .",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@verne/tsconfigs": "workspace:*",
+    "unbuild": "latest",
+    "typescript": "catalog:package"
+  }
+}
