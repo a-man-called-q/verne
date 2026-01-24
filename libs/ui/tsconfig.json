@@ -1,9 +1,10 @@
 {
-	"extends": "@verne/tsconfigs/react-vite",
+	"extends": "@verne/tsconfigs/react",
 	"compilerOptions": {
 		"outDir": "dist",
 		"rootDir": "src",
 		"baseUrl": ".",
+		"types": [],
 		"paths": {
 			"@verne/ui/*": ["./src/*"]
 		}

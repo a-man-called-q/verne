@@ -4,13 +4,13 @@
 	"private": true,
 	"files": [
 		"base.json",
-		"react-vite.json",
+		"react.json",
 		"node.json",
 		"astro.json"
 	],
 	"exports": {
 		"./base": "./base.json",
-		"./react-vite": "./react-vite.json",
+		"./react": "./react.json",
 		"./node": "./node.json",
 		"./astro": "./astro.json"
 	},

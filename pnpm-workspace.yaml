@@ -10,9 +10,15 @@ onlyBuiltDependencies:
   - core-js-pure
 
 catalogs:
-#   expo:
-#   web:
-#   fonts:
+  # expo:
+  react:
+    '@types/react': '^19.2.5'
+    '@types/react-dom': '^19.2.3'
+    react: '^19.2.0'
+    react-dom: '^19.2.0'
+
+  # fonts:
   package:
     typescript: '^5.7.3'
-    
+    unbuild: '3.6.1'
+

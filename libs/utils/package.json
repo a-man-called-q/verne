@@ -1,28 +1,22 @@
 {
-  "name": "{{pkgName}}",
+  "name": "@verne/utils",
   "version": "0.0.0",
   "private": true,
-  {{#if isBuildable}}
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
-  {{/if}}
   "scripts": {
-    {{#if isBuildable}}
     "build": "unbuild",
     "dev": "unbuild --stub",
     "lint": "biome check .",
     "typecheck": "tsc --noEmit"
-    {{else}}
-    "lint": "biome check ."
-    {{/if}}
-  }{{#if isBuildable}},
+  },
   "devDependencies": {
-    "unbuild": "catalog:package",
     "typescript": "catalog:package",
+    "unbuild": "catalog:package",
+    "vite": "^7.3.1"
   }
-  {{/if}}
 }
