@@ -12,15 +12,16 @@
     {{#if isBuildable}}
     "build": "unbuild",
     "dev": "unbuild --stub",
-    {{/if}}
     "lint": "biome check .",
     "typecheck": "tsc --noEmit"
-  },
+    {{else}}
+    "lint": "biome check ."
+    {{/if}}
+  }{{#if isBuildable}},
   "devDependencies": {
     "@verne/tsconfigs": "workspace:*",
-    {{#if isBuildable}}
     "unbuild": "latest",
-    {{/if}}
     "typescript": "catalog:package"
   }
+  {{/if}}
 }

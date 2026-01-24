@@ -15,10 +15,6 @@
 		"./astro": "./astro.json"
 	},
 	"scripts": {
-		"lint": "biome check .",
-		"typecheck": "tsc --noEmit"
-	},
-	"devDependencies": {
-		"typescript": "catalog:package"
+		"lint": "biome check ."
 	}
 }
