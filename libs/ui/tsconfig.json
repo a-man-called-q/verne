@@ -6,7 +6,8 @@
 		"baseUrl": ".",
 		"types": [],
 		"paths": {
-			"@verne/ui/*": ["./src/*"]
+			"@verne/ui/*": ["./src/*"],
+			"@verne/assets/*": ["../assets/*"]
 		}
 	},
 	"include": ["src/**/*"]
