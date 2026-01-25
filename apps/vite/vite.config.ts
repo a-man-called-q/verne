@@ -1,5 +1,6 @@
 import path from "node:path";
 import tailwindcss from "@tailwindcss/vite";
+import { tanstackRouter } from "@tanstack/router-plugin/vite";
 import { prerenderFavicon } from "@verne/utils";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
@@ -8,6 +9,10 @@ import { defineConfig } from "vite";
 export default defineConfig({
 	plugins: [
 		tailwindcss(),
+		tanstackRouter({
+			target: "react",
+			autoCodeSplitting: true,
+		}),
 		prerenderFavicon({
 			icon: "@verne/assets/images/logo.svg",
 		}),

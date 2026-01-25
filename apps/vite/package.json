@@ -10,13 +10,15 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
-		"@radix-ui/react-navigation-menu": "^1.2.14",
 		"@tailwindcss/vite": "catalog:common",
+		"@tanstack/react-router": "^1.157.7",
+		"@tanstack/react-router-devtools": "^1.157.7",
 		"react": "catalog:react",
 		"react-dom": "catalog:react",
 		"tailwindcss": "catalog:common"
 	},
 	"devDependencies": {
+		"@tanstack/router-plugin": "^1.157.7",
 		"@types/node": "catalog:service",
 		"@types/react": "catalog:react",
 		"@types/react-dom": "catalog:react",

@@ -8,9 +8,7 @@
 	"exports": {
 		".": "./src/index.ts",
 		"./components/*": "./src/components/*",
-		"./lib/*": "./src/lib/*",
-		"./hooks/*": "./src/hooks/*",
-		"./styles/*": "./src/styles/*"
+		"./lib/*": "./src/lib/*"
 	},
 	"files": [
 		"dist",
@@ -29,7 +27,7 @@
 		"postcss": "^8.5.6",
 		"react": "catalog:react",
 		"react-dom": "catalog:react",
-		"tailwindcss": "^4.1.18",
+		"tailwindcss": "catalog:common",
 		"typescript": "catalog:common",
 		"unbuild": "catalog:package"
 	},
