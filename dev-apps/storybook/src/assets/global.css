@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@source "../../../../libs/ui/src";
+@import "@verne/assets/index.css";
+
+@theme {
+  --font-logo: "Zalando Sans Expanded Variable";
+}

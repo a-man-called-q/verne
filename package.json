@@ -10,7 +10,7 @@
 		"build": "turbo build",
 		"lint": "turbo lint",
 		"dev": "turbo dev --filter='./apps/*'",
-		"storybook": "turbo storybook dev -p 6006 --filter=storybook"
+		"storybook": "turbo storybook --filter=storybook"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.3.12",
