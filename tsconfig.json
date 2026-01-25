@@ -1,8 +1,10 @@
 {
 	"files": [],
 	"references": [
-		{
-			"path": "./libs/tsconfigs"
-		}
+		{ "path": "./libs/tsconfigs" },
+		{ "path": "./libs/ui" },
+		{ "path": "./libs/utils" },
+		{ "path": "./apps/vite" },
+		{ "path": "./dev-apps/storybook" }
 	]
 }

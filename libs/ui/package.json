@@ -29,7 +29,8 @@
 		"react-dom": "catalog:react",
 		"tailwindcss": "catalog:common",
 		"typescript": "catalog:common",
-		"unbuild": "catalog:package"
+		"unbuild": "catalog:package",
+		"vite": "catalog:web"
 	},
 	"dependencies": {
 		"@radix-ui/react-navigation-menu": "^1.2.14",

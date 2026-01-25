@@ -4,7 +4,6 @@
 		"outDir": "dist",
 		"rootDir": "src",
 		"baseUrl": ".",
-		"types": [],
 		"paths": {
 			"@verne/ui/*": ["./src/*"],
 			"@verne/assets/*": ["../assets/*"]
