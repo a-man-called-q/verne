@@ -1,3 +1,4 @@
+import path from "node:path";
 import tailwindcss from "@tailwindcss/vite";
 import { prerenderFavicon } from "@verne/utils";
 import react from "@vitejs/plugin-react";
@@ -8,7 +9,7 @@ export default defineConfig({
 	plugins: [
 		tailwindcss(),
 		prerenderFavicon({
-			icon: "@verne/assets/logo.svg",
+			icon: "@verne/assets/images/logo.svg",
 		}),
 		react({
 			babel: {
@@ -16,4 +17,9 @@ export default defineConfig({
 			},
 		}),
 	],
+	resolve: {
+		alias: {
+			"@": path.resolve(__dirname, "./src"),
+		},
+	},
 });

@@ -10,20 +10,19 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
-		"@tailwindcss/vite": "^4.1.18",
-		"@verne/assets": "workspace:*",
-		"@verne/utils": "workspace:*",
-		"react": "^19.2.0",
-		"react-dom": "^19.2.0",
-		"tailwindcss": "^4.1.18"
+		"@radix-ui/react-navigation-menu": "^1.2.14",
+		"@tailwindcss/vite": "catalog:common",
+		"react": "catalog:react",
+		"react-dom": "catalog:react",
+		"tailwindcss": "catalog:common"
 	},
 	"devDependencies": {
-		"@types/node": "^24.10.1",
-		"@types/react": "^19.2.5",
-		"@types/react-dom": "^19.2.3",
-		"@vitejs/plugin-react": "^5.1.1",
+		"@types/node": "catalog:service",
+		"@types/react": "catalog:react",
+		"@types/react-dom": "catalog:react",
+		"@vitejs/plugin-react": "catalog:react",
 		"babel-plugin-react-compiler": "^1.0.0",
-		"typescript": "~5.9.3",
+		"typescript": "catalog:common",
 		"vite": "catalog:web"
 	}
 }

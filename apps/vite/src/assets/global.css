@@ -1,7 +1,2 @@
-@import "@verne/assets/fonts.css";
 @import "tailwindcss";
-
-@theme {
-	--font-sans:
-		"Zalando Sans Expanded Variable", ui-sans-serif, system-ui, sans-serif;
-}
+@import "@verne/assets/index.css";

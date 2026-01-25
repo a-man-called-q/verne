@@ -4,28 +4,20 @@
 	"private": true,
 	"types": "./index.d.ts",
 	"files": [
-		"logo.svg",
-		"index.d.ts",
-		"fonts.css"
+		"images",
+		"styles",
+		"index.d.ts"
 	],
 	"exports": {
-		".": {
-			"types": "./index.d.ts"
-		},
-		"./logo.svg": {
-			"types": "./index.d.ts",
-			"default": "./logo.svg"
-		},
-		"./fonts.css": "./fonts.css",
-		"./*": {
-			"types": "./index.d.ts",
-			"default": "./*"
-		}
+		"./index.css": "./styles/index.css",
+		"./images/*": "./images/*"
 	},
 	"scripts": {
 		"lint": "biome check ."
 	},
 	"dependencies": {
-		"@fontsource-variable/zalando-sans-expanded": "^5.1.1"
+		"@fontsource-variable/zalando-sans-expanded": "^5.1.1",
+		"tailwindcss": "catalog:common",
+		"tw-animate-css": "catalog:common"
 	}
 }

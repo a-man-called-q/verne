@@ -16,7 +16,7 @@
 	},
 	"devDependencies": {
 		"@types/node": "catalog:service",
-		"typescript": "catalog:package",
+		"typescript": "catalog:common",
 		"unbuild": "catalog:package",
 		"vite": "catalog:web"
 	},

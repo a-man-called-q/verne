@@ -1,7 +1,12 @@
 {
 	"extends": "@verne/tsconfigs/react",
 	"compilerOptions": {
-		"tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo"
+		"tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./src/*"],
+			"@verne/ui/*": ["../../libs/ui/src/*"]
+		}
 	},
 	"include": ["src"]
 }

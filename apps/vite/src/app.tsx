@@ -1,4 +1,4 @@
-import verneLogo from "@verne/assets/logo.svg";
+import verneLogo from "@verne/assets/images/logo.svg";
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
