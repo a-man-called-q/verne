@@ -1,16 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import verneLogo from "@verne/assets/images/logo.svg";
-import {
-	Header,
-	HeaderNavigationMenuLink,
-	HeaderNavigationMenuTrigger,
-	NavigationMenuContent,
-	NavigationMenuItem,
-	NavigationMenuLink,
-} from "@verne/ui";
 import { useState } from "react";
-import reactLogo from "../assets/react.svg";
-import viteLogo from "../assets/vite.svg";
 
 export const Route = createFileRoute("/")({
 	component: Index,
@@ -20,142 +10,108 @@ function Index() {
 	const [count, setCount] = useState(0);
 
 	return (
-		<div className="min-h-screen bg-[url('/background.jpg')] bg-cover bg-center bg-no-repeat bg-fixed relative overflow-hidden font-sans">
-			<div className="absolute inset-0 backdrop-blur-sm bg-black/10" />
+		<div className="min-h-screen w-full relative font-sans selection:bg-primary/30 overflow-hidden bg-background">
+			{/* GLOBAL ATMOSPHERE (Fixed Background) */}
+			<div className="fixed inset-0 z-0 select-none pointer-events-none">
+				{/* The Image - Opacity 100 for maximum brightness */}
+				<div
+					className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-100"
+					style={{ backgroundImage: "url('/background.jpg')" }}
+				/>
 
-			<Header
-				logo={<img src={verneLogo} className="h-8 w-8" alt="Verne" />}
-				className="bg-transparent/40 backdrop-blur-md border-white/10 text-white"
-				menuItems={
-					<>
-						<NavigationMenuItem>
-							<HeaderNavigationMenuTrigger>
-								Getting Started
-							</HeaderNavigationMenuTrigger>
-							<NavigationMenuContent>
-								<ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-									<li className="row-span-3">
-										<NavigationMenuLink asChild>
-											<a
-												className="flex h-full w-full select-none flex-col justify-end rounded-md bg-linear-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-												href="/"
-											>
-												<div className="mb-2 mt-4 text-lg font-medium">
-													Verne UI
-												</div>
-												<p className="text-sm leading-tight text-muted-foreground">
-													Beautifully designed components built with Radix UI
-													and Tailwind CSS.
-												</p>
-											</a>
-										</NavigationMenuLink>
-									</li>
-									<li>
-										<NavigationMenuLink asChild>
-											<a
-												href="/docs"
-												className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-											>
-												<div className="text-sm font-medium leading-none">
-													Introduction
-												</div>
-												<p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-													Re-usable components built using Radix UI and Tailwind
-													CSS.
-												</p>
-											</a>
-										</NavigationMenuLink>
-									</li>
-								</ul>
-							</NavigationMenuContent>
-						</NavigationMenuItem>
-						<NavigationMenuItem>
-							<HeaderNavigationMenuLink href="/docs">
-								Documentation
-							</HeaderNavigationMenuLink>
-						</NavigationMenuItem>
-					</>
-				}
-				rightContent={
-					<div className="flex items-center gap-2">
-						<button
-							type="button"
-							className="text-sm font-medium hover:underline px-4 py-2"
-						>
-							Log in
-						</button>
-						<button
-							type="button"
-							className="bg-primary text-primary-foreground h-9 px-4 py-2 rounded-md text-sm font-medium hover:bg-primary/90 shadow-sm"
-						>
-							Sign up
-						</button>
-					</div>
-				}
-			/>
+				{/* Film Grain Texture */}
+				<div
+					className="absolute inset-0 opacity-[0.03] mix-blend-overlay"
+					style={{
+						backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+					}}
+				/>
 
-			<div className="relative z-10 min-h-[calc(100vh-64px)] flex flex-col items-center justify-center p-4 text-white">
-				<div className="max-w-md w-full text-center space-y-8 p-10 rounded-3xl bg-neutral-800/30 shadow-2xl border border-white/40">
-					<div className="flex justify-center gap-6 items-center opacity-80 hover:opacity-100 transition-opacity">
-						<a
-							href="https://vite.dev"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="transition-transform hover:scale-110"
-						>
-							<img
-								src={viteLogo}
-								className="h-10 w-10 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
-								alt="Vite logo"
-							/>
-						</a>
-						<a
-							href="https://react.dev"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="transition-transform hover:scale-110"
-						>
-							<img
-								src={reactLogo}
-								className="h-10 w-10 animate-spin-slow drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
-								alt="React logo"
-							/>
-						</a>
-					</div>
+				{/* Global Gradient Vignette */}
+				<div className="absolute inset-0 bg-gradient-to-t from-foreground/20 via-transparent to-transparent" />
 
-					<div className="space-y-6 flex flex-col items-center">
-						<div className="relative group">
-							<div className="absolute -inset-4 bg-white/10 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition duration-1000" />
-							<img
-								src={verneLogo}
-								className="relative h-48 w-48 drop-shadow-2xl transform transition-transform duration-500 hover:scale-105"
-								alt="Verne logo"
-							/>
+				{/* Cinematic Grid (Global) */}
+				<div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:40px_40px]" />
+			</div>
+
+			{/* CONTENT LAYER */}
+			<div className="relative z-10 flex flex-col lg:flex-row min-h-screen">
+				{/* LEFT PANEL: GLASS CARD (1/3 Width) */}
+				<div className="w-full lg:w-1/3 flex flex-col border-r border-border/20 bg-background/30 backdrop-blur-2xl h-screen shadow-[10px_0_40px_rgba(0,0,0,0.1)]">
+					{/* Header inside Glass Panel */}
+					<header className="h-24 px-8 md:px-12 flex items-center justify-between">
+						<div className="flex items-center gap-3 opacity-90 hover:opacity-100 transition-opacity">
+							<img src={verneLogo} className="h-8 w-8" alt="Verne" />
 						</div>
+						<div className="flex gap-6 text-xs font-medium tracking-wide text-muted-foreground uppercase">
+							<a
+								href="/docs"
+								className="hover:text-foreground transition-colors"
+							>
+								Docs
+							</a>
+							<a
+								href="https://github.com"
+								className="hover:text-foreground transition-colors"
+							>
+								Github
+							</a>
+						</div>
+					</header>
 
-						<div className="space-y-2">
-							<h1 className="text-6xl font-bold tracking-tight text-white drop-shadow-lg">
-								Verne
+					{/* Main Content Area */}
+					<main className="flex-1 flex flex-col justify-center px-8 md:px-12 space-y-10">
+						<div className="space-y-6">
+							<h1 className="text-5xl md:text-6xl font-bold tracking-tighter text-foreground leading-none">
+								Ready to <br />
+								build.
 							</h1>
+							<p className="text-lg text-muted-foreground max-w-sm leading-relaxed">
+								The environment is pre-configured. Edits reflect instantly.
+							</p>
 						</div>
-					</div>
 
-					<div className="space-y-4">
-						<button
-							type="button"
-							onClick={() => setCount((count) => count + 1)}
-							className="px-8 py-3 bg-sky-600 hover:bg-sky-500 text-white rounded-full transition-all shadow-lg hover:shadow-sky-500/20 font-bold tracking-wide active:scale-95 text-lg"
-						>
-							count is {count}
-						</button>
-						<p className="text-sm text-neutral-400 font-medium">
-							Edit{" "}
-							<code className="text-neutral-200 font-mono bg-neutral-800 px-2 py-1 rounded-md border border-neutral-700">
-								src/App.tsx
-							</code>{" "}
-							and save to test HMR
-						</p>
-					</div>
+						{/* Interactive Terminal Block */}
+						<div className="group relative rounded-lg bg-secondary border border-border/10 overflow-hidden shadow-2xl transition-all hover:shadow-3xl hover:scale-[1.01]">
+							<div className="flex items-center justify-between px-4 py-3 border-b border-border/5 bg-foreground/5">
+								<div className="flex gap-1.5 opacity-70">
+									<div className="w-2.5 h-2.5 rounded-full bg-red-500" />
+									<div className="w-2.5 h-2.5 rounded-full bg-yellow-500" />
+									<div className="w-2.5 h-2.5 rounded-full bg-green-500" />
+								</div>
+								<span className="text-[10px] font-mono text-secondary-foreground/40 uppercase tracking-wider">
+									Terminal
+								</span>
+							</div>
+							<div className="p-6 font-mono text-sm text-secondary-foreground/80">
+								<div className="flex items-center gap-3">
+									<span className="text-primary font-bold">➜</span>
+									<span>edit</span>
+									<span className="text-primary-foreground bg-primary/20 px-1.5 py-0.5 rounded border border-primary/20">
+										src/routes/index.tsx
+									</span>
+								</div>
+							</div>
+						</div>
+
+						{/* Actions - Full Width Button using Primary Theme */}
+						<div className="pt-2">
+							<button
+								type="button"
+								onClick={() => setCount((c) => c + 1)}
+								className="h-10 px-6 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg hover:shadow-xl w-full flex items-center justify-center gap-2"
+							>
+								<span>Count: {count}</span>
+							</button>
+						</div>
+					</main>
+
+					<footer className="h-20 px-8 md:px-12 flex items-center justify-between text-[10px] uppercase tracking-widest text-muted-foreground font-mono"></footer>
+				</div>
+
+				{/* RIGHT PANEL: SPACER (Transparent to show global bg) */}
+				<div className="hidden lg:flex flex-1 items-center justify-center pointer-events-none">
+					{/* No text, no watermark, just pure atmosphere */}
 				</div>
 			</div>
 		</div>

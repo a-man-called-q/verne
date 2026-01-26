@@ -132,5 +132,7 @@ dist-ssr
 storybook-static
 *storybook.log
 
+# Tanstack
+.tanstack/
+
 # Verne Specific
-libs/ui/src/components.json
