@@ -11,5 +11,14 @@
 		"*.css": "tailwindcss",
 		"*.scss": "tailwindcss"
 	},
-	"editor.tabSize": 2
+	"editor.tabSize": 2,
+	"files.readonlyInclude": {
+		"**/routeTree.gen.ts": true
+	},
+	"files.watcherExclude": {
+		"**/routeTree.gen.ts": true
+	},
+	"search.exclude": {
+		"**/routeTree.gen.ts": true
+	}
 }

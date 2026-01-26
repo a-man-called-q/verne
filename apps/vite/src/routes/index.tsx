@@ -1,3 +1,4 @@
+import { createFileRoute } from "@tanstack/react-router";
 import verneLogo from "@verne/assets/images/logo.svg";
 import {
 	Header,
@@ -8,10 +9,14 @@ import {
 	NavigationMenuLink,
 } from "@verne/ui";
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "./assets/vite.svg";
+import reactLogo from "../assets/react.svg";
+import viteLogo from "../assets/vite.svg";
 
-function App() {
+export const Route = createFileRoute("/")({
+	component: Index,
+});
+
+function Index() {
 	const [count, setCount] = useState(0);
 
 	return (
@@ -156,5 +161,3 @@ function App() {
 		</div>
 	);
 }
-
-export default App;
