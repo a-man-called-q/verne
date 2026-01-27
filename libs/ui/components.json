@@ -5,7 +5,7 @@
 	"tsx": true,
 	"tailwind": {
 		"config": "",
-		"css": "@verne/assets/theme.css",
+		"css": "../assets/styles/theme.css",
 		"baseColor": "zinc",
 		"cssVariables": true
 	},

@@ -5,7 +5,7 @@
 	"tsx": true,
 	"tailwind": {
 		"config": "",
-		"css": "@verne/assets/theme.css",
+		"css": "../../libs/assets/styles/theme.css",
 		"baseColor": "neutral",
 		"cssVariables": true,
 		"prefix": ""
@@ -15,8 +15,8 @@
 		"components": "@/components",
 		"utils": "@verne/ui/lib/utils",
 		"ui": "@verne/ui/components",
-		"lib": "@/lib",
-		"hooks": "@/hooks"
+		"lib": "@verne/ui/lib",
+		"hooks": "@verne/ui/hooks"
 	},
 	"registries": {}
 }

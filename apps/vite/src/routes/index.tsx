@@ -37,7 +37,7 @@ function Index() {
 			{/* CONTENT LAYER */}
 			<div className="relative z-10 flex flex-col lg:flex-row min-h-screen">
 				{/* LEFT PANEL: GLASS CARD (1/3 Width) */}
-				<div className="w-full lg:w-1/3 flex flex-col border-r border-border/20 bg-background/30 backdrop-blur-2xl h-screen shadow-[10px_0_40px_rgba(0,0,0,0.1)]">
+				<div className="w-full lg:w-1/3 flex flex-col border-r border-border/20 bg-background/20 lg:bg-background/30 backdrop-blur-2xl h-screen shadow-[10px_0_40px_rgba(0,0,0,0.1)]">
 					{/* Header inside Glass Panel */}
 					<header className="h-24 px-8 md:px-12 flex items-center justify-between">
 						<div className="flex items-center gap-3 opacity-90 hover:opacity-100 transition-opacity">

@@ -5,7 +5,8 @@
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["./src/*"],
-			"@verne/ui/*": ["../../libs/ui/src/*"]
+			"@verne/ui/*": ["../../libs/ui/src/*"],
+			"@verne/assets/*": ["../../libs/assets/*"]
 		}
 	},
 	"include": ["src", "src/routeTree.gen.ts"]
