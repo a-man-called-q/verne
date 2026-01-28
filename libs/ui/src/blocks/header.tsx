@@ -1,10 +1,7 @@
 import type * as React from "react";
 import {
-	NavigationMenu,
 	NavigationMenuLink,
-	NavigationMenuList,
 	NavigationMenuTrigger,
-	NavigationMenuViewport,
 } from "../components/navigation-menu";
 import { cn } from "../lib/utils";
 
@@ -39,59 +36,38 @@ export function HeaderNavigationMenuLink({
 }
 
 export interface HeaderProps extends React.HTMLAttributes<HTMLElement> {
-	logo?: React.ReactNode;
-	title?: string;
-	menuItems?: React.ReactNode;
-	rightContent?: React.ReactNode;
+	left?: React.ReactNode;
+	right?: React.ReactNode;
+	children?: React.ReactNode;
 	containerClass?: string;
 }
 
 export function Header({
 	className,
 	containerClass,
-	logo,
-	title = "Verne",
-	menuItems,
-	rightContent,
+	left,
+	right,
+	children,
 	...props
 }: HeaderProps) {
 	return (
-		<header
-			className={cn(
-				"w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60 z-50 sticky top-0",
-				className,
-			)}
-			{...props}
-		>
+		<header className={cn("w-full z-50 sticky top-0", className)} {...props}>
 			<div
 				className={cn(
-					"container flex h-16 items-center mx-auto px-4 md:px-6 justify-between gap-4",
+					"container flex min-h-16 items-center mx-auto px-4 md:px-6 justify-between gap-4",
 					containerClass,
 				)}
 			>
-				<div className="flex items-center gap-6 md:gap-8">
-					{/* Logo Section */}
-					<a
-						href="/"
-						className="flex items-center gap-2 font-bold text-lg shrink-0"
-					>
-						{logo ? logo : <div className="size-8 bg-primary/20 rounded-md" />}
-						<span className="hidden md:inline-block font-logo">{title}</span>
-					</a>
+				{/* Left Section (e.g., Logo) */}
+				<div className="flex items-center gap-6 md:gap-8 shrink-0">{left}</div>
 
-					{/* Main Navigation */}
-					{menuItems && (
-						<div className="hidden md:flex items-center">
-							<NavigationMenu viewport={false}>
-								<NavigationMenuList>{menuItems}</NavigationMenuList>
-								<NavigationMenuViewport className="origin-top-center bg-popover/80 backdrop-blur-md text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 relative mt-1.5 h-(--radix-navigation-menu-viewport-height) w-full overflow-hidden rounded-xl border border-white/10 shadow-lg md:w-(--radix-navigation-menu-viewport-width)" />
-							</NavigationMenu>
-						</div>
-					)}
+				{/* Middle Section (e.g., Navigation) */}
+				<div className="flex-1 flex items-center justify-center">
+					{children}
 				</div>
 
-				{/* Right Section */}
-				<div className="flex items-center gap-4">{rightContent}</div>
+				{/* Right Section (e.g., Actions) */}
+				<div className="flex items-center gap-4 shrink-0">{right}</div>
 			</div>
 		</header>
 	);
