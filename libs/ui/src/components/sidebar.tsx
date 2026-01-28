@@ -1,28 +1,28 @@
 "use client";
 
 import { Slot } from "@radix-ui/react-slot";
-import { Button } from "@verne/ui/components/button";
-import { Input } from "@verne/ui/components/input";
-import { Separator } from "@verne/ui/components/separator";
+import { cva, type VariantProps } from "class-variance-authority";
+import { PanelLeftIcon } from "lucide-react";
+import * as React from "react";
+import { useIsMobile } from "../hooks/use-mobile";
+import { cn, setCookie } from "../lib/utils";
+import { Button } from "./button";
+import { Input } from "./input";
+import { Separator } from "./separator";
 import {
 	Sheet,
 	SheetContent,
 	SheetDescription,
 	SheetHeader,
 	SheetTitle,
-} from "@verne/ui/components/sheet";
-import { Skeleton } from "@verne/ui/components/skeleton";
+} from "./sheet";
+import { Skeleton } from "./skeleton";
 import {
 	Tooltip,
 	TooltipContent,
 	TooltipProvider,
 	TooltipTrigger,
-} from "@verne/ui/components/tooltip";
-import { useIsMobile } from "@verne/ui/hooks/use-mobile";
-import { cn, setCookie } from "@verne/ui/lib/utils";
-import { cva, type VariantProps } from "class-variance-authority";
-import { PanelLeftIcon } from "lucide-react";
-import * as React from "react";
+} from "./tooltip";
 
 const SIDEBAR_COOKIE_NAME = "sidebar_state";
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;

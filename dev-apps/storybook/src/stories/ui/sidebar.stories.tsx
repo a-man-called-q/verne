@@ -102,7 +102,7 @@ export const Default: Story = {
 			<SidebarInset>
 				<header className="flex h-16 items-center gap-2 border-b px-4">
 					<SidebarTrigger />
-					<div className="w-[1px] h-4 bg-border" />
+					<div className="w-px h-4 bg-border" />
 					<span className="font-semibold">Dashboard</span>
 				</header>
 				<div className="flex flex-1 flex-col gap-4 p-4">
@@ -111,7 +111,7 @@ export const Default: Story = {
 						<div className="aspect-video rounded-xl bg-muted/50" />
 						<div className="aspect-video rounded-xl bg-muted/50" />
 					</div>
-					<div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50" />
+					<div className="min-h-screen flex-1 rounded-xl bg-muted/50" />
 				</div>
 			</SidebarInset>
 		</>
@@ -196,17 +196,43 @@ export const RightSide: Story = {
 		<>
 			<SidebarInset>
 				<header className="flex h-16 items-center gap-2 border-b px-4 w-full justify-between">
-					<span className="font-semibold">Right Sidebar</span>
-					<SidebarTrigger />
+					<div className="flex items-center gap-2">
+						<SidebarTrigger className="rotate-180" />
+						<div className="w-px h-4 bg-border" />
+						<span className="font-semibold">Main Content</span>
+					</div>
 				</header>
 				<div className="p-4">
-					<div className="h-full rounded-xl bg-muted/50 p-4">Content area</div>
+					<div className="h-full rounded-xl bg-muted/50 p-4">
+						<div className="max-w-2xl mx-auto space-y-4">
+							<h1 className="text-2xl font-bold">Welcome back!</h1>
+							<p className="text-muted-foreground">
+								This is an example of a right-sided sidebar layout. The sidebar
+								is positioned on the right side of the screen.
+							</p>
+						</div>
+					</div>
 				</div>
 			</SidebarInset>
 			<Sidebar side="right">
+				<SidebarHeader>
+					<SidebarMenu>
+						<SidebarMenuItem>
+							<SidebarMenuButton size="lg">
+								<div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
+									<User2 className="size-4" />
+								</div>
+								<div className="flex flex-col gap-0.5 leading-none">
+									<span className="font-semibold">John Doe</span>
+									<span className="">john@example.com</span>
+								</div>
+							</SidebarMenuButton>
+						</SidebarMenuItem>
+					</SidebarMenu>
+				</SidebarHeader>
 				<SidebarContent>
 					<SidebarGroup>
-						<SidebarGroupLabel>Settings</SidebarGroupLabel>
+						<SidebarGroupLabel>Navigation</SidebarGroupLabel>
 						<SidebarGroupContent>
 							<SidebarMenu>
 								{items.map((item) => (
@@ -221,6 +247,16 @@ export const RightSide: Story = {
 						</SidebarGroupContent>
 					</SidebarGroup>
 				</SidebarContent>
+				<SidebarFooter>
+					<SidebarMenu>
+						<SidebarMenuItem>
+							<SidebarMenuButton>
+								<Settings />
+								<span>Preferences</span>
+							</SidebarMenuButton>
+						</SidebarMenuItem>
+					</SidebarMenu>
+				</SidebarFooter>
 			</Sidebar>
 		</>
 	),

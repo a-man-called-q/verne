@@ -27,6 +27,7 @@
 		"postcss": "^8.5.6",
 		"react": "catalog:react",
 		"react-dom": "catalog:react",
+		"rollup-plugin-preserve-directives": "^0.4.0",
 		"tailwindcss": "catalog:common",
 		"typescript": "catalog:common",
 		"unbuild": "catalog:package",
