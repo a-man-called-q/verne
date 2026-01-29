@@ -66,18 +66,6 @@ importers:
       '@turbo/gen':
         specifier: ^2.7.5
         version: 2.7.5(@types/node@25.0.10)(typescript@5.9.3)
-      '@verne/assets':
-        specifier: workspace:*
-        version: link:libs/assets
-      '@verne/tsconfigs':
-        specifier: workspace:*
-        version: link:libs/tsconfigs
-      '@verne/ui':
-        specifier: workspace:*
-        version: link:libs/ui
-      '@verne/utils':
-        specifier: workspace:*
-        version: link:libs/utils
       lefthook:
         specifier: ^2.0.15
         version: 2.0.15
@@ -96,6 +84,12 @@ importers:
       '@tanstack/react-router-devtools':
         specifier: ^1.157.7
         version: 1.157.7(@tanstack/react-router@1.157.7(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@tanstack/router-core@1.157.7)(csstype@3.2.3)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@verne/assets':
+        specifier: workspace:*
+        version: link:../../libs/assets
+      '@verne/ui':
+        specifier: workspace:*
+        version: link:../../libs/ui
       react:
         specifier: catalog:react
         version: 19.2.3
@@ -118,6 +112,12 @@ importers:
       '@types/react-dom':
         specifier: catalog:react
         version: 19.2.3(@types/react@19.2.9)
+      '@verne/tsconfigs':
+        specifier: workspace:*
+        version: link:../../libs/tsconfigs
+      '@verne/utils':
+        specifier: workspace:*
+        version: link:../../libs/utils
       '@vitejs/plugin-react':
         specifier: catalog:react
         version: 5.1.2(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.31.1)(tsx@4.21.0))

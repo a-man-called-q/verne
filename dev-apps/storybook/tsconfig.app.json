@@ -23,11 +23,7 @@
 		"erasableSyntaxOnly": true,
 		"noFallthroughCasesInSwitch": true,
 		"noUncheckedSideEffectImports": true,
-		"baseUrl": ".",
-		"paths": {
-			"@verne/assets/*": ["../../libs/assets/*"],
-			"@verne/ui/*": ["../../libs/ui/src/*"]
-		}
+		"baseUrl": "."
 	},
-	"include": ["src"]
+	"include": ["src", ".storybook"]
 }

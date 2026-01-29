@@ -13,6 +13,8 @@
 		"@tailwindcss/vite": "catalog:common",
 		"@tanstack/react-router": "^1.157.7",
 		"@tanstack/react-router-devtools": "^1.157.7",
+		"@verne/ui": "workspace:*",
+		"@verne/assets": "workspace:*",
 		"react": "catalog:react",
 		"react-dom": "catalog:react",
 		"tailwindcss": "catalog:common"
@@ -22,6 +24,8 @@
 		"@types/node": "catalog:service",
 		"@types/react": "catalog:react",
 		"@types/react-dom": "catalog:react",
+		"@verne/tsconfigs": "workspace:*",
+		"@verne/utils": "workspace:*",
 		"@vitejs/plugin-react": "catalog:react",
 		"babel-plugin-react-compiler": "^1.0.0",
 		"typescript": "catalog:common",
