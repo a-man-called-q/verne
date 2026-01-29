@@ -1,5 +1,7 @@
-import { createFileRoute, Outlet } from "@tanstack/react-router";
-import { TwoColumnsLayout } from "@verne/ui";
+import { createFileRoute, Link, Outlet } from "@tanstack/react-router";
+import verneLogo from "@verne/assets/images/logo.svg";
+import { DefaultLayout, TwoColumnsLayout } from "@verne/ui";
+import squiggleArrow from "../assets/squiggle-arrow.svg";
 import { GlobalAtmosphere } from "../components/global-atmostphere";
 
 export const Route = createFileRoute("/_auth")({
@@ -8,38 +10,61 @@ export const Route = createFileRoute("/_auth")({
 
 function AuthLayout() {
 	return (
-		<TwoColumnsLayout
-			poster={
-				<div className="relative h-full w-full bg-zinc-900 overflow-hidden">
-					<GlobalAtmosphere />
-					<div className="relative z-20 flex h-full flex-col justify-between p-10">
-						<div className="flex items-center text-lg font-medium text-white">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								strokeWidth="2"
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								className="mr-2 h-6 w-6"
-								aria-hidden="true"
-							>
-								<path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3" />
-							</svg>
-							Verne Inc
-						</div>
-						<div className="space-y-2 text-white">
-							<p className="text-lg">
-								&ldquo;Secure, fast, and developer-friendly. The best platform
-								for building your next big idea.&rdquo;
+		<div className="relative min-h-screen bg-background">
+			<GlobalAtmosphere className="fixed inset-0" />
+			<TwoColumnsLayout
+				childrenClassName="md:min-w-[500px] md:max-w-[550px]"
+				className="relative z-10 bg-transparent"
+				posterClassName="bg-transparent"
+				widthRatio={[1, 2]}
+				nesting
+				poster={
+					<div className="relative h-full w-full overflow-hidden p-10 flex flex-col justify-end z-20">
+						<blockquote className="space-y-2 text-white/90">
+							<p className="text-lg leading-relaxed font-light">
+								&ldquo;In consequence of inventing machines, men will be
+								devoured by them.&rdquo;
 							</p>
-						</div>
+						</blockquote>
 					</div>
-				</div>
-			}
-		>
-			<Outlet />
-		</TwoColumnsLayout>
+				}
+			>
+				<DefaultLayout
+					className="bg-background/20 lg:bg-background/30 backdrop-blur-2xl shadow-[10px_0_40px_rgba(0,0,0,0.1)] h-full"
+					mainClassName="flex flex-col justify-center px-8 md:px-12 space-y-10"
+					headerProps={{
+						className: "static border-none bg-transparent z-0",
+						containerClass: "h-24 px-8 md:px-12 max-w-none",
+						left: <AuthHeader />,
+					}}
+					footer={null}
+					footerClassName="bg-transparent border-none px-4 md:px-12"
+				>
+					<Outlet />
+				</DefaultLayout>
+			</TwoColumnsLayout>
+		</div>
+	);
+}
+
+function AuthHeader() {
+	return (
+		<div className="flex flex-col gap-2">
+			<Link
+				to="/"
+				className="flex items-center gap-3 opacity-90 hover:opacity-100 transition-opacity"
+			>
+				<img src={verneLogo} className="h-8 w-8" alt="Verne" />
+				<span className="font-bold text-xl tracking-tight">Verne</span>
+			</Link>
+			<div className="flex items-center gap-2 text-muted-foreground pl-2">
+				<img
+					src={squiggleArrow}
+					className="h-8 w-8 -scale-x-100 rotate-12 opacity-80"
+					alt="back"
+				/>
+				<span className="text-xs font-medium">back to home</span>
+			</div>
+		</div>
 	);
 }

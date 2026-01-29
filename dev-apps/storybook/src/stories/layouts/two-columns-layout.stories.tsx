@@ -109,13 +109,13 @@ export const CustomColumnWidth: Story = {
 	args: {
 		children: <AuthForm />,
 		poster: <BrandingVisual />,
-		className: "lg:grid-cols-[1fr_2fr]",
+		widthRatio: [2, 1], // Children 2 parts, Poster 1 part
 	},
 	parameters: {
 		docs: {
 			description: {
 				story:
-					"You can customize the column width ratio using Tailwind CSS grid classes in the `className` prop. For example, `lg:grid-cols-[1fr_2fr]` makes the content column twice as wide as the poster column.",
+					"You can easily customize the column width ratio using the `widthRatio` prop. For example, `widthRatio={[2, 1]}` makes the content column twice as wide as the poster column. This prop automatically handles the order based on `posterPosition`.",
 			},
 		},
 	},
