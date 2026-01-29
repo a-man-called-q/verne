@@ -27,5 +27,5 @@
 			"@verne/ui/*": ["../../libs/ui/src/*"]
 		}
 	},
-	"include": ["vite.config.ts", ".storybook/*.ts"]
+	"include": ["vite.config.ts"]
 }

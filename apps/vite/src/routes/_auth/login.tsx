@@ -52,11 +52,11 @@ function LoginPage() {
 					</div>
 				</form>
 				<div className="relative flex items-center py-5">
-					<span className="flex-grow border-t border-border/20" />
+					<span className="grow border-t border-border/20" />
 					<span className="shrink-0 px-2 text-xs uppercase text-muted-foreground/50">
 						Or continue with
 					</span>
-					<span className="flex-grow border-t border-border/20" />
+					<span className="grow border-t border-border/20" />
 				</div>
 				<Button
 					variant="outline"

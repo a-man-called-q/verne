@@ -365,6 +365,9 @@ importers:
       '@types/react-dom':
         specifier: catalog:react
         version: 19.2.3(@types/react@19.2.9)
+      '@verne/tsconfigs':
+        specifier: workspace:*
+        version: link:../tsconfigs
       autoprefixer:
         specifier: ^10.4.23
         version: 10.4.23(postcss@8.5.6)

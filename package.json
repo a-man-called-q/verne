@@ -9,7 +9,7 @@
 	"scripts": {
 		"gen": "turbo gen",
 		"build": "turbo build",
-		"lint": "turbo lint",
+		"lint": "npx @biomejs/biome lint . --write",
 		"dev": "turbo dev --filter='./apps/*'",
 		"storybook": "turbo storybook --filter=storybook",
 		"typecheck": "turbo typecheck",

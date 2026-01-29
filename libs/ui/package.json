@@ -23,6 +23,7 @@
 	"devDependencies": {
 		"@types/react": "catalog:react",
 		"@types/react-dom": "catalog:react",
+		"@verne/tsconfigs": "workspace:*",
 		"autoprefixer": "^10.4.23",
 		"postcss": "^8.5.6",
 		"react": "catalog:react",
