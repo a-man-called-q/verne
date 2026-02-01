@@ -6,7 +6,7 @@ import {
 	DialogDescription,
 	DialogHeader,
 	DialogTitle,
-} from "@verne/ui/components/dialog";
+} from "@verne/ui/components/overlays/dialog";
 import { cn } from "@verne/ui/lib/utils";
 import { Command as CommandPrimitive } from "cmdk";
 import { SearchIcon } from "lucide-react";

@@ -1,7 +1,7 @@
 "use client";
 
-import { Label } from "@verne/ui/components/label";
-import { Separator } from "@verne/ui/components/separator";
+import { Separator } from "@verne/ui/components/data-display/separator";
+import { Label } from "@verne/ui/components/forms/label";
 
 import { cn } from "@verne/ui/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";

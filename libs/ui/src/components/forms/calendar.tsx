@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, buttonVariants } from "@verne/ui/components/button";
+import { Button, buttonVariants } from "@verne/ui/components/forms/button";
 import { cn } from "@verne/ui/lib/utils";
 import {
 	ChevronDownIcon,

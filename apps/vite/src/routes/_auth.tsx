@@ -18,16 +18,7 @@ function AuthLayout() {
 				posterClassName="bg-transparent"
 				widthRatio={[1, 2]}
 				nesting
-				poster={
-					<div className="relative h-full w-full overflow-hidden p-10 flex flex-col justify-end z-20">
-						<blockquote className="space-y-2 text-white/90">
-							<p className="text-lg leading-relaxed font-light">
-								&ldquo;In consequence of inventing machines, men will be
-								devoured by them.&rdquo;
-							</p>
-						</blockquote>
-					</div>
-				}
+				poster={<Poster />}
 			>
 				<DefaultLayout
 					className="bg-background/20 lg:bg-background/30 backdrop-blur-2xl shadow-[10px_0_40px_rgba(0,0,0,0.1)] h-full"
@@ -57,14 +48,27 @@ function AuthHeader() {
 				<img src={verneLogo} className="h-8 w-8" alt="Verne" />
 				<span className="font-bold text-xl tracking-tight">Verne</span>
 			</Link>
-			<div className="flex items-center gap-2 text-muted-foreground pl-2">
+			<div className="flex items-end gap-1 text-neutral-600 pl-4">
 				<img
 					src={squiggleArrow}
-					className="h-8 w-8 -scale-x-100 rotate-12 opacity-80"
+					className="size-6 -scale-x-100 rotate-12 opacity-40"
 					alt="back"
 				/>
-				<span className="text-xs font-medium">back to home</span>
+				<span className="text-xs font-medium -mb-2">back to home</span>
 			</div>
+		</div>
+	);
+}
+
+function Poster() {
+	return (
+		<div className="relative h-full w-full overflow-hidden p-10 flex flex-col justify-end z-20">
+			<blockquote className="space-y-2 text-white/90">
+				<p className="text-lg leading-relaxed font-light">
+					&ldquo;In consequence of inventing machines, men will be devoured by
+					them.&rdquo;
+				</p>
+			</blockquote>
 		</div>
 	);
 }

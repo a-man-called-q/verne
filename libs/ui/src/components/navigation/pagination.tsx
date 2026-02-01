@@ -1,4 +1,4 @@
-import { type Button, buttonVariants } from "@verne/ui/components/button";
+import { type Button, buttonVariants } from "@verne/ui/components/forms/button";
 import { cn } from "@verne/ui/lib/utils";
 import {
 	ChevronLeftIcon,

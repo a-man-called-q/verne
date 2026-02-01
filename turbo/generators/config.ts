@@ -41,7 +41,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
 			actions.push({
 				type: "add",
 				path: "libs/{{name}}/package.json",
-				templateFile: "templates/package.json.hbs",
+				templateFile: "templates/lib/package.json.hbs",
 				data: { scope, pkgName, isBuildable },
 			});
 
@@ -49,19 +49,19 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
 				actions.push({
 					type: "add",
 					path: "libs/{{name}}/tsconfig.json",
-					templateFile: "templates/tsconfig.json.hbs",
+					templateFile: "templates/lib/tsconfig.json.hbs",
 					data: { isBuildable },
 				});
 
 				actions.push({
 					type: "add",
 					path: "libs/{{name}}/src/index.ts",
-					templateFile: "templates/src/index.ts.hbs",
+					templateFile: "templates/lib/src/index.ts.hbs",
 				});
 				actions.push({
 					type: "add",
 					path: "libs/{{name}}/build.config.ts",
-					templateFile: "templates/build.config.ts.hbs",
+					templateFile: "templates/lib/build.config.ts.hbs",
 				});
 			}
 			// Config packages don't get an index.ts as requested

@@ -1,12 +1,10 @@
 {
 	"name": "@verne/assets",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"private": true,
-	"types": "./index.d.ts",
 	"files": [
 		"images",
-		"styles",
-		"index.d.ts"
+		"styles"
 	],
 	"exports": {
 		"./index.css": "./styles/index.css",

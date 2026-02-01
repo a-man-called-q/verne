@@ -1,22 +1,36 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button, Input, Label } from "@verne/ui";
 
-export const Route = createFileRoute("/_auth/login")({
-	component: LoginPage,
+export const Route = createFileRoute("/_auth/register")({
+	component: RegisterPage,
 });
 
-function LoginPage() {
+function RegisterPage() {
 	return (
 		<div className="w-full space-y-8">
 			<div className="flex flex-col space-y-2">
-				<h1 className="text-3xl font-bold tracking-tighter">Welcome back</h1>
+				<h1 className="text-3xl font-bold tracking-tighter">
+					Create an account
+				</h1>
 				<p className="text-muted-foreground">
-					Enter your email below to login to your account
+					Enter your email below to create your account
 				</p>
 			</div>
 			<div className="grid gap-3">
 				<form>
 					<div className="grid gap-4">
+						<div className="grid gap-2">
+							<Label htmlFor="name">Name</Label>
+							<Input
+								id="name"
+								placeholder="John Doe"
+								type="text"
+								autoCapitalize="words"
+								autoComplete="name"
+								autoCorrect="off"
+								className="h-11 bg-background/30 border-input/40 focus:border-input focus:bg-background/50 transition-all"
+							/>
+						</div>
 						<div className="grid gap-2">
 							<Label htmlFor="email">Email</Label>
 							<Input
@@ -30,16 +44,7 @@ function LoginPage() {
 							/>
 						</div>
 						<div className="grid gap-2">
-							<div className="flex items-center justify-between">
-								<Label htmlFor="password">Password</Label>
-								<Link
-									to="."
-									search={{}}
-									className="text-xs text-muted-foreground hover:text-primary underline-offset-4 hover:underline"
-								>
-									Forgot password?
-								</Link>
-							</div>
+							<Label htmlFor="password">Password</Label>
 							<Input
 								id="password"
 								type="password"
@@ -47,7 +52,7 @@ function LoginPage() {
 							/>
 						</div>
 						<Button className="h-11 shadow-lg hover:shadow-xl transition-all">
-							Sign In with Email
+							Sign Up with Email
 						</Button>
 					</div>
 				</form>
@@ -73,12 +78,12 @@ function LoginPage() {
 					Github
 				</Button>
 				<p className="px-8 text-center text-sm text-muted-foreground">
-					Don&apos;t have an account?{" "}
+					Already have an account?{" "}
 					<Link
-						to="/register"
+						to="/login"
 						className="underline underline-offset-4 hover:text-primary"
 					>
-						Sign Up
+						Sign In
 					</Link>
 				</p>
 			</div>

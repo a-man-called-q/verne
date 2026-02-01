@@ -1,8 +1,8 @@
 "use client";
 
-import { Button } from "@verne/ui/components/button";
-import { Input } from "@verne/ui/components/input";
-import { Textarea } from "@verne/ui/components/textarea";
+import { Button } from "@verne/ui/components/forms/button";
+import { Input } from "@verne/ui/components/forms/input";
+import { Textarea } from "@verne/ui/components/forms/textarea";
 import { cn } from "@verne/ui/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import type * as React from "react";
