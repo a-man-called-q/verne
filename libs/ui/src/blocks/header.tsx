@@ -2,7 +2,7 @@ import type * as React from "react";
 import {
 	NavigationMenuLink,
 	NavigationMenuTrigger,
-} from "../components/navigation-menu";
+} from "../components/navigation/navigation-menu";
 import { cn } from "../lib/utils";
 
 export function HeaderNavigationMenuTrigger({

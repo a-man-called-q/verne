@@ -1,0 +1,12 @@
+{
+	"extends": "@verne/tsconfigs/vite",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./src/*"],
+			"@verne/ui/*": ["../../libs/ui/src/*"],
+			"@verne/assets/*": ["../../libs/assets/*"]
+		}
+	},
+	"include": ["src"]
+}
